@@ -1,0 +1,12 @@
+  
+    if(!req.body.title){
+        return(next(createError(400, "title is required")))
+    } else if (!req.body.author) {
+        return(next(createError(400, "author is required")))
+    } else if (!req.body.read) {
+        return(next(createError(400, "read: yes/no is required")))
+    } else if (req.body.read != "yes" && req.body.read != "no" ) {
+        return(next(createError(400, "read can only be yes or no")))
+    } else if (req.body.description.length > 30) {
+        return(next(createError(400, "Max characters is 30")))
+    }
