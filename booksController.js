@@ -68,9 +68,7 @@ exports.delete = async function(req, res, next) {
     res.send({result:true})
 }
 
-
 exports.update = async function(req, res, next) {
-
     await Book.findOneAndUpdate({_id:ObjectId(req.params.id)}, req.body);
     res.send({result:true})
 }
